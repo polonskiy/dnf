@@ -1,0 +1,8 @@
+#!/bin/bash
+
+dir=${0%/*}
+trap ". $dir/stop; pkill -P $$; wait" INT TERM
+env > "$dir/vars"
+. "$dir/start"
+sleep infinity &
+wait

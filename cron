@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export $(< "${0%/*}/vars")
+exec bash "$@"
