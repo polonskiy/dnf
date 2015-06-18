@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export $(< "${0%/*}/vars")
+export $(< "$(dirname $0)/vars")
 exec bash "$@"
