@@ -89,7 +89,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 #install dnf
 RUN mkdir /opt/dnf
-RUN curl -sL https://github.com/polonskiy/dnf/archive/0.1.0.tar.gz | tar -xzvf - --directory /opt/dnf --strip-components=1
+RUN curl -sL https://github.com/polonskiy/dnf/archive/0.1.2.tar.gz | tar -xzvf - --directory /opt/dnf --strip-components=1
 
 #dnf startup/shutdown scripts
 ADD dnf/start /opt/dnf/start
