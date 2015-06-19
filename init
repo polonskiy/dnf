@@ -1,8 +1,7 @@
 #!/bin/bash
 
 dir="$(dirname $0)"
-trap ". $dir/stop; pkill -P $$; wait" INT TERM
+trap ". $dir/stop; pkill -P $$" INT TERM
 env > "$dir/vars"
 . "$dir/start"
-sleep infinity &
-wait
+while pgrep -P $$ > /dev/null; do sleep 1; done
