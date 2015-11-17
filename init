@@ -4,4 +4,4 @@ dir="$(dirname $0)"
 trap ". $dir/stop; pkill -P $$" INT TERM
 env > "$dir/vars"
 . "$dir/start"
-while pgrep -P $$ > /dev/null; do sleep 1; done
+while pgrep -P $$ > /dev/null; do sleep 0.1; done
